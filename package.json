@@ -1,8 +1,8 @@
 {
   "name": "pharmacy-medicine-list-scrapper-javascript",
   "version": "1.0.0",
-  "description": "Servaid + Pharmach Medicines List Scrapper in Javascrip (es5)",
-  "main": "app.js",
+  "description": "Servaid + Pharmacy Medicines List Scrapper in Javascript (es5)",
+  "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
