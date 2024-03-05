@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-var productList = [];
+var productsList = [];
 var result = {
     successes: 0,
     failures: 0
@@ -13,7 +13,7 @@ async function fetchDataFromServaidPlusPageWise(pageNo) {
         const tempProducts = tempData.products.data;
         for (let index = 0; index < tempProducts.length; index++) {
             const product = tempProducts[index];
-            productList.push(product);
+            productsList.push(product);
         }
         result = { ...result, successes: result.successes + 1 };
         console.log(`Page #: ${pageNo} - Scrapped Successfully!`);
@@ -30,7 +30,7 @@ async function script() {
         const pageNo = index;
         await fetchDataFromServaidPlusPageWise(pageNo);
     }
-    fs.writeFileSync('productsList.json', (JSON.stringify(productList, null, 2)).trim());
+    fs.writeFileSync('productsList.json', (JSON.stringify(productsList, null, 2)).trim());
     console.log(`Total: ${endPage} | Successes: ${result.successes} | Failures: ${result.failures}`);
 }
 
